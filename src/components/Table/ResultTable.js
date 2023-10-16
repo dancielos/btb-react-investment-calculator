@@ -1,12 +1,9 @@
 import ResultItem from './ResultItem';
 
 const ResultTable = function (props) {
-	{
-		/* TODO: Show below table conditionally (only once result data is available) */
-	}
-	{
-		/* Show fallback text if no data is available */
-	}
+	if (props.data.length === 0)
+		return <p className='center'>No data is available.</p>;
+
 	return (
 		<table className='result'>
 			<thead>
@@ -19,7 +16,7 @@ const ResultTable = function (props) {
 				</tr>
 			</thead>
 			<tbody>
-				<ResultItem />
+				<ResultItem data={props.data} />
 			</tbody>
 		</table>
 	);
