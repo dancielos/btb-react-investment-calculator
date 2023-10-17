@@ -1,8 +1,8 @@
 import ResultItem from './ResultItem';
 
 const ResultTable = function (props) {
-	if (props.data.length === 0)
-		return <p className='center'>No data is available.</p>;
+	if (props.data?.length === 0)
+		return <p className='center'>No data available.</p>;
 
 	return (
 		<table className='result'>
@@ -16,7 +16,10 @@ const ResultTable = function (props) {
 				</tr>
 			</thead>
 			<tbody>
-				<ResultItem data={props.data} />
+				<ResultItem
+					data={props.data}
+					initialInvestment={props.initialInvestment}
+				/>
 			</tbody>
 		</table>
 	);
